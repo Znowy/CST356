@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="js/login.js"></script>
+</head>
+
+<body>
+    <h1 id="login_header">User Login</h1>
+    <form>
+        <div>
+            Username: <input id="usernameId" type="text" name="username"/>
+            <span id="usernameError" style="visibility: hidden">Username is required</span>
+        </div>
+
+        <div>
+            Password: <input id="passwordId" type="password" name="password"/>
+            <span id="passwordError" style="visibility: hidden">Password is required</span>
+        </div>
+
+        <div>
+            <input type="button" value="Submit" onclick="validate()"/>
+        </div>
+    </form>
+</body>
+
+</html>
