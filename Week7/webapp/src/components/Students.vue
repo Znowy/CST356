@@ -10,7 +10,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="student in students" :key="student.studentId">
-                        <td>{{ student.email_address }}</td>
+                        <td>{{ student.email }}</td>
                         <td>
                             <button v-on:click='displayStudentDetails(student.studentId)'>Details</button>
                             <button v-on:click='displayUpdateStudent(student.studentId)'>Update</button>
@@ -28,7 +28,7 @@
         
             <form>
                 <div class='form-entry'>
-                    Email: <input type='text' v-model='email_address'/>
+                    email: <input type='text' v-model='email'/>
                 </div>
 
                 <div class='form-entry'>
@@ -43,7 +43,7 @@
             <h2 class='section-heading'>Student Detail</h2>
 
             <div class='form-entry'>
-                Email: {{ email_address }}
+                email: {{ email }}
             </div>
 
             <div class='form-entry'>
@@ -56,7 +56,7 @@
         
             <form>
                 <div class='form-entry'>
-                    Email: <input type='text' v-model='email_address'/>
+                    email: <input type='text' v-model='email'/>
                 </div>
 
                 <div class='form-entry'>
@@ -77,7 +77,7 @@
             return {
                 students: [],
                 operation: 'list',
-                email_address: undefined,
+                email: undefined,
                 studentUpdateId: undefined,
                 apiServer: process.env.VUE_APP_API_SERVER
             }
@@ -98,7 +98,7 @@
                 let url = `http://${this.apiServer}/api/student/${studentId}`;
                 Vue.axios.get(url).then(
                     (response) => {
-                        this.email_address = response.data.email_address;
+                        this.email = response.data.email;
                     },
                     (error) => {
                         console.log(error)
@@ -106,13 +106,13 @@
                 );
             },
             displayAddStudent: function() {
-                this.email_address = undefined;
+                this.email = undefined;
                 this.operation = 'add';
             },
             addStudent: function() {
                 let url = `http://${this.apiServer}/api/student`;
                 Vue.axios.post(url, {
-                    email_address: this.email_address
+                    email: this.email
                 }).then(
                     () => {
                         this.getStudents();
@@ -135,7 +135,7 @@
             updateStudent: function() {
                 let url = `http://${this.apiServer}/api/student/${this.studentUpdateId}`;
                 Vue.axios.put(url, {
-                    email_address: this.email_address
+                    email: this.email
                 }).then(
                     () => {
                         this.getStudents();
