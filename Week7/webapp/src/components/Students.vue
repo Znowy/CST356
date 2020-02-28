@@ -28,7 +28,7 @@
         
             <form>
                 <div class='form-entry'>
-                    email: <input type='text' v-model='email'/>
+                    Email: <input type='text' v-model='email'/>
                 </div>
 
                 <div class='form-entry'>
@@ -43,7 +43,7 @@
             <h2 class='section-heading'>Student Detail</h2>
 
             <div class='form-entry'>
-                email: {{ email }}
+                Email: {{ email }}
             </div>
 
             <div class='form-entry'>
@@ -56,7 +56,7 @@
         
             <form>
                 <div class='form-entry'>
-                    email: <input type='text' v-model='email'/>
+                    Email: <input type='text' v-model='email'/>
                 </div>
 
                 <div class='form-entry'>
