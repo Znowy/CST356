@@ -10,7 +10,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="student in students" :key="student.studentId">
-                        <td>{{ student.email }}</td>
+                        <td v-bind:class="{ special: student.special }">{{ student.email }}</td>
                         <td>
                             <button v-on:click='displayStudentDetails(student.studentId)'>Details</button>
                             <button v-on:click='displayUpdateStudent(student.studentId)'>Update</button>
@@ -179,5 +179,9 @@ table, tr, td, th {
     padding: 5px;
     text-align: left;
     border: 1px solid black;
+}
+
+.special {
+    background-color: lightblue;
 }
 </style>
