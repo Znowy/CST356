@@ -32,7 +32,7 @@
                 </div>
 
                 <div class='form-entry'>
-                    <button v-on:click='addstudent'>Add Student</button>
+                    <button v-on:click='addStudent'>Add Student</button>
                     <button v-on:click='cancel'>Cancel</button>
                 </div>
             </form>
